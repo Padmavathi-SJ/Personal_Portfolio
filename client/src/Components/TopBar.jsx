@@ -1,6 +1,7 @@
 import linkedinIcon from "../assets/linkedin.png";
 import githubIcon from "../assets/github.png";
 import telegramIcon from "../assets/telegram.png";
+import emailIcon from "../assets/gmail.png";
 
 const TopBar = () => {
   return (
@@ -20,6 +21,9 @@ const TopBar = () => {
         </a>
         <a href="https://t.me/your-telegram" target="_blank" rel="noopener noreferrer">
           <img src={telegramIcon} alt="Telegram" className="w-8 h-8 hover:opacity-80 transition duration-300" />
+        </a>
+        <a href="https://t.me/your-telegram" target="_blank" rel="noopener noreferrer">
+          <img src={emailIcon} alt="Gmail" className=" w-8 h-9 hover:opacity-80 transition duration-300" />
         </a>
       </div>
     </div>
