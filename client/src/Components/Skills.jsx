@@ -12,7 +12,7 @@ import mysqlIcon from "../assets/mysql.png";
 import gitIcon from "../assets/git.png";
 import githubIcon from "../assets/github.png";
 import dockerIcon from "../assets/docker.png";
-import awsIcon from "../assets/AWS.png"; // AWS Icon Added
+import awsIcon from "../assets/AWS.png";
 
 const skillsData = [
   { name: "C", icon: cIcon, level: 85 },
@@ -28,47 +28,54 @@ const skillsData = [
   { name: "Git", icon: gitIcon, level: 95 },
   { name: "GitHub", icon: githubIcon, level: 90 },
   { name: "Docker", icon: dockerIcon, level: 60 },
-  { name: "AWS Cloud", icon: awsIcon, level: 75 }, // AWS Cloud Service Added
+  { name: "AWS Cloud", icon: awsIcon, level: 75 },
 ];
 
 const Skills = () => {
   return (
-    <div className=""
->
+    <div className="py-16 px-6 md:px-16 bg-transparent">
       {/* Title & Subtitle */}
       <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-[var(--primary-text)]">My Technical Skills</h2>
-        <p className="text-lg text-gray-500 mt-2">Proficiency Levels in Various Technologies</p>
+        <h2 className="text-3xl font-bold text-gray-200">My Technical Skills</h2>
+        <p className="text-lg text-gray-400 mt-2">Proficiency Levels in Various Technologies</p>
       </div>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <motion.div
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         {skillsData.map((skill, index) => (
-          <div
+          <motion.div
             key={index}
-            className="bg-[var(--secondary-bg)] p-4 rounded-lg shadow-md flex items-center space-x-4"
+            className="border border-[#99c2ff] rounded-lg bg-[rgba(255,255,255,0.05)] backdrop-blur-lg 
+              shadow-md p-4 flex items-center space-x-4 transition-all transform 
+              hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/50"
+            whileHover={{ scale: 1.02 }}
           >
             {/* Skill Icon */}
             <img src={skill.icon} alt={skill.name} className="w-12 h-12" />
             
             {/* Skill Details */}
             <div className="flex-1">
-              <h3 className="text-lg font-semibold text-[var(--primary-text)]">{skill.name}</h3>
+              <h3 className="text-lg font-semibold text-gray-100">{skill.name}</h3>
               
               {/* Progress Bar */}
               <div className="w-full bg-gray-300 rounded-full h-2 mt-2">
                 <div
-                  className="bg-[var(--accent-color)] h-2 rounded-full"
+                  className="bg-[#99c2ff] h-2 rounded-full"
                   style={{ width: `${skill.level}%` }}
                 ></div>
               </div>
               
               {/* Percentage Level */}
-              <span className="text-sm text-gray-500">{skill.level}%</span>
+              <span className="text-sm text-gray-400">{skill.level}%</span>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

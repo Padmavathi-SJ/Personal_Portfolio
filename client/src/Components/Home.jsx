@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import TopBar from "./TopBar";
 import Sidebar from "./SideBar";
+
+import HomeBanner from "./HomeBanner"; // Home section banner
+import Profile from "./Profile"; // About section
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Certifications from "./Certifications";
@@ -19,7 +22,17 @@ const Home = () => {
 
         {/* Main content area without extra margins */}
         <div className="h-full p-6">
-          <section id="home" className="min-h-screen bg-transparent"></section>
+          {/* Home Section */}
+          <section id="home" className="min-h-screen bg-transparent flex items-center justify-center">
+            <HomeBanner /> {/* Default Home Component */}
+          </section>
+
+          <hr className="border-[var(--accent-color)] opacity-50 w-full" />
+
+          {/* About Section */}
+          <section id="about" className="min-h-screen bg-transparent flex items-center justify-center">
+            <Profile /> {/* About Developer Component */}
+          </section>
 
           <hr className="border-[var(--accent-color)] opacity-50 w-full" />
 
