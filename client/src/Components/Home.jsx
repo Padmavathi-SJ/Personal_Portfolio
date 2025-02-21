@@ -8,61 +8,40 @@ import Contact from "./Contact";
 import "./global.css";
 
 const Home = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
-      const scrollPosition = window.scrollY + 150; // Adjusted for visibility
-
-      sections.forEach((section) => {
-        if (
-          section.offsetTop <= scrollPosition &&
-          section.offsetTop + section.offsetHeight > scrollPosition
-        ) {
-          section.classList.add("fade-in");
-        } else {
-          section.classList.remove("fade-in");
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div className="relative flex">
       {/* Sidebar - Fixed */}
       <Sidebar />
 
       <div className="flex flex-col w-full ml-16">
-        {/* TopBar - Adjusted to not overlap with Sidebar */}
+        {/* TopBar - No Overlapping, No Extra Space */}
         <TopBar />
 
-        {/* Main content area with Smooth Scrolling */}
-        <div className="p-8 mt-16">
-          <section id="home" className="min-h-screen bg-transparent fade-in"></section>
+        {/* Main content area without extra margins */}
+        <div className="h-full p-6">
+          <section id="home" className="min-h-screen bg-transparent"></section>
 
           <hr className="border-[var(--accent-color)] opacity-50 w-full" />
 
-          <section id="skills" className="min-h-screen bg-transparent fade-in">
+          <section id="skills" className="min-h-screen bg-transparent">
             <Skills />
           </section>
 
           <hr className="border-[var(--accent-color)] opacity-50 w-full" />
 
-          <section id="projects" className="min-h-screen bg-transparent fade-in">
+          <section id="projects" className="min-h-screen bg-transparent">
             <Projects />
           </section>
 
           <hr className="border-[var(--accent-color)] opacity-50 w-full" />
 
-          <section id="certifications" className="min-h-screen bg-transparent fade-in">
+          <section id="certifications" className="min-h-screen bg-transparent">
             <Certifications />
           </section>
 
           <hr className="border-[var(--accent-color)] opacity-50 w-full" />
 
-          <section id="contact" className="min-h-screen bg-transparent fade-in">
+          <section id="contact" className="min-h-screen bg-transparent">
             <Contact />
           </section>
 
