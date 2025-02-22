@@ -20,7 +20,7 @@ const Sidebar = () => {
   return (
     <div className="fixed top-0 left-0 h-screen w-16 flex flex-col items-center bg-[var(--secondary-bg)] shadow-lg">
       {/* Developer's Profile Image (placed at the top) */}
-      <div className="mt-4 w-10 h-10 rounded-full overflow-hidden">
+      <div className="mt-3 w-10 h-10 rounded-full overflow-hidden">
         <img src={profileImage} alt="Developer Profile" className="w-full h-full object-cover" />
       </div>
 
