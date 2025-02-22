@@ -6,10 +6,13 @@ import emailIcon from "../assets/gmail.png";
 const TopBar = () => {
   return (
     <div className="fixed top-0 left-16 w-[calc(100%-4rem)] flex items-center justify-between bg-[var(--secondary-bg)] shadow-md px-3 py-3 z-50">
-      {/* Logo */}
-      <h1 className="text-[var(--primary-text)] font-semibold text-xl tracking-wide">
-        &lt;Padmavathi SJ /&gt;
-      </h1>
+      {/* Logo and Title */}
+      <div className="flex flex-col">
+        <h1 className="text-[var(--primary-text)] font-semibold text-xl tracking-wide">
+          &lt;Padmavathi SJ /&gt;
+        </h1>
+        <span className="text-[var(--secondary-text)] text-sm font-medium">Full Stack Developer</span>
+      </div>
 
       {/* Social Media Icons */}
       <div className="flex space-x-5">
@@ -23,7 +26,7 @@ const TopBar = () => {
           <img src={telegramIcon} alt="Telegram" className="w-8 h-8 hover:opacity-80 transition duration-300" />
         </a>
         <a href="https://t.me/your-telegram" target="_blank" rel="noopener noreferrer">
-          <img src={emailIcon} alt="Gmail" className=" w-8 h-9 hover:opacity-80 transition duration-300" />
+          <img src={emailIcon} alt="Gmail" className="w-8 h-9 hover:opacity-80 transition duration-300" />
         </a>
       </div>
     </div>
