@@ -15,10 +15,8 @@ const Certifications = () => {
     <div className="flex flex-col items-center w-full">
       {/* Title & Description */}
       <div className="text-center mb-6">
-        <h2 className="text-4xl font-semibold text-gray-200 mb-12">Certifications</h2>
-        <p className="text-gray-600 mt-2 text-lg">
-          Browse through my learning, event, and internship certificates.
-        </p>
+        <h2 className="text-4xl font-semibold text-gray-200 mb-12 mt-10">Certifications</h2>
+
       </div>
 
       {/* Certifications Section */}

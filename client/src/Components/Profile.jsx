@@ -2,11 +2,12 @@ import devImage from "../assets/about.jpg"; // Add your image
 
 const Profile = () => {
   return (
-    <div className="flex items-center justify-center w-full py-12 bg-transparent">
-      <div className="flex w-3/4 max-w-6xl">
-        {/* Left Content (3/4 Width) */}
-        <div className="w-3/4 pr-8">
+    <div className="flex items-center justify-center w-full py-16 bg-transparent">
+      <div className="flex w-3/4 max-w-6xl items-center justify-between">
+        {/* Left Content (About Section) */}
+        <div className="w-3/4 pr-10">
           <h2 className="text-4xl font-semibold text-gray-200 mb-6">About Me</h2>
+
           <p className="text-gray-400 text-lg leading-relaxed">
             I am a passionate Full Stack & Cloud Developer specializing in modern web technologies.
             My expertise includes building scalable applications using React, Node.js, and cloud services like AWS.
@@ -18,19 +19,25 @@ const Profile = () => {
           </p>
         </div>
 
-        {/* Right Image Section (1/4 Width) */}
-        <div className="w-1/4 flex justify-center relative">
-          <div className="relative">
-            {/* Decorative Background Shapes */}
-            <div className="absolute top-0 left-0 w-24 h-24 bg-blue-600 opacity-30 rounded-full animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-16 h-16 bg-pink-500 opacity-40 rounded-full animate-bounce"></div>
-            
-            {/* Developer Image */}
+        {/* Right Image & Text Box Section */}
+        <div className="relative flex flex-col items-center">
+          {/* Developer Image - Adjusted Size for Balance */}
+          <div className="relative w-56 h-56 rounded-xl overflow-hidden border border-gray-500 shadow-[0_0_25px_#1E90FF]">
             <img
               src={devImage}
               alt="Developer"
-              className="relative z-10 w-40 h-40 rounded-full shadow-lg border-4 border-gray-700"
+              className="w-full h-full object-cover"
             />
+          </div>
+
+          {/* Name Box - Below Image */}
+          <div className="mt-6 px-6 py-2 text-lg font-semibold text-gray-200 border border-gray-500 rounded-md w-52 text-center shadow-[0_0_15px_#00BFFF]">
+            Padmavathi SJ
+          </div>
+
+          {/* Passion Box - Offset from Middle of Name Box */}
+          <div className="mt-3 px-6 py-2 text-md font-medium text-gray-200 border border-blue-500 rounded-md w-56 text-center shadow-[0_0_15px_#FF4500] relative -left-6">
+            Full Stack Developer
           </div>
         </div>
       </div>

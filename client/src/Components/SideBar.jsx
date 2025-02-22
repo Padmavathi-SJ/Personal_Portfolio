@@ -29,7 +29,7 @@ const Sidebar = () => {
         <button onClick={() => handleScroll("home")} className="hover:opacity-80 transition duration-300 flex justify-center">
           <img src={homeIcon} alt="Home" className="w-6 h-6" />
         </button>
-        <button onClick={() => handleScroll("profile")} className="hover:opacity-80 transition duration-300 flex justify-center">
+        <button onClick={() => handleScroll("about")} className="hover:opacity-80 transition duration-300 flex justify-center">
           <img src={userIcon} alt="Profile" className="w-6 h-6" />
         </button>
         <button onClick={() => handleScroll("skills")} className="hover:opacity-80 transition duration-300 flex justify-center">
