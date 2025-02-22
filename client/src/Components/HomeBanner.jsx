@@ -1,4 +1,4 @@
-import devImage from "../assets/Home.jpg";
+import devImage from "../assets/home3.jpg";
 import cImage from "../assets/letter-c.png";
 import javaImage from "../assets/java.png";
 import sqlImage from "../assets/sql-server.png";
@@ -7,12 +7,12 @@ import dockerImage from "../assets/docker.png";
 
 const HomeBanner = () => {
   return (
-    <div className="w-full flex items-center justify-center py-16 bg-transparent">
-      <div className="grid grid-cols-2 gap-8 w-3/4 max-w-6xl">
-        {/* Right Side - Main Image with Surrounding Skills */}
-        <div className="relative flex items-center justify-center">
-          {/* Main Developer Image */}
-          <div className="relative w-60 h-60 rounded-full overflow-hidden border-4 border-gray-500 shadow-lg">
+    <div className="flex items-center justify-center w-full py-16 bg-transparent">
+      <div className="grid grid-cols-2 gap-8 w-3/4 max-w-6xl items-center">
+        {/* Right Side - Main Image & Skills */}
+        <div className="relative flex justify-center items-center">
+          {/* Main Image */}
+          <div className="relative w-66 h-96 ">
             <img
               src={devImage}
               alt="Developer"
@@ -20,36 +20,18 @@ const HomeBanner = () => {
             />
           </div>
 
-          {/* Surrounding Skill Images */}
-          <div className="absolute w-full h-full flex items-center justify-center">
-            {/* Skill Icons Positioned Around the Main Image */}
-            <img
-              src={cImage}
-              alt="C"
-              className="absolute top-0 left-10 w-12 h-12 drop-shadow-lg"
-            />
-            <img
-              src={javaImage}
-              alt="Java"
-              className="absolute top-10 right-0 w-14 h-14 drop-shadow-lg"
-            />
-            <img
-              src={sqlImage}
-              alt="SQL"
-              className="absolute bottom-0 left-14 w-12 h-12 drop-shadow-lg"
-            />
-            <img
-              src={awsImage}
-              alt="AWS"
-              className="absolute bottom-10 right-10 w-16 h-16 drop-shadow-lg"
-            />
-            <img
-              src={dockerImage}
-              alt="Docker"
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 w-14 h-14 drop-shadow-lg"
-            />
+          {/* Skill Images Positioned Around Main Image */}
+          <div className="absolute flex flex-wrap justify-center items-center w-full h-full">
+            <img src={cImage} alt="C" className="absolute top-4 left-0 w-14 h-14 shadow-lg" />
+            <img src={javaImage} alt="Java" className="absolute top-8 right-2 w-16 h-16 shadow-lg" />
+            <img src={sqlImage} alt="SQL" className="absolute bottom-12 left-4 w-14 h-14 shadow-lg" />
+            <img src={awsImage} alt="AWS" className="absolute bottom-4 right-8 w-16 h-16 shadow-lg" />
+            <img src={dockerImage} alt="Docker" className="absolute top-28 left-20 w-14 h-14 shadow-lg" />
           </div>
         </div>
+
+        {/* Left Side (To Be Implemented Next) */}
+        <div className="flex flex-col"></div>
       </div>
     </div>
   );
