@@ -12,7 +12,8 @@ const projects = [
     name: "Project One",
     description: "A web application built with modern technologies.",
     image: project1Img,
-    gallery: ["../assets/project1-1.jpg", "../assets/project1-2.jpg"],
+    gallery: ["../assets/ncc/ncc1.png", "../assets/ncc/ncc2.png", "../assets/ncc/ncc3.png",
+       "../assets/ncc/ncc4.png","../assets/ncc/ncc5.png", "../assets/ncc/ncc6.png"],
   },
   {
     name: "Project Two",
