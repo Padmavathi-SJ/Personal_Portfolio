@@ -1,3 +1,4 @@
+import { useState } from "react";
 import homeIcon from "../assets/home-button.png";
 import userIcon from "../assets/information.png";
 import skillsIcon from "../assets/pencil.png";
@@ -5,8 +6,11 @@ import projectsIcon from "../assets/idea.png";
 import certificationsIcon from "../assets/medal.png";
 import contactIcon from "../assets/contact-us.png";
 import profileImage from "../assets/padma.png"; // Developer's Profile Image
+import ProfilePanel from "./ProfilePanel"; // Importing Profile Panel Component
 
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const handleScroll = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -19,9 +23,12 @@ const Sidebar = () => {
 
   return (
     <div className="fixed top-0 left-0 h-screen w-16 flex flex-col items-center bg-[var(--secondary-bg)] shadow-lg">
-      {/* Developer's Profile Image (placed at the top) */}
-      <div className="mt-3 w-10 h-10 rounded-full overflow-hidden">
+      {/* Developer's Profile Image */}
+      <div className="relative mt-3 w-10 h-10 rounded-full overflow-hidden cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
         <img src={profileImage} alt="Developer Profile" className="w-full h-full object-cover" />
+        
+        {/* ProfilePanel Below Image */}
+        <ProfilePanel isOpen={isOpen} />
       </div>
 
       {/* Sidebar Icons (Centered) */}
