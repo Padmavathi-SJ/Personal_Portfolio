@@ -164,13 +164,13 @@ const Projects = () => {
       />
       {/* Close Button */}
       <button 
-        className="absolute top-4 right-4 text-white text-1xl"
+        className="absolute top-4 right-4 text-black text-2xl"
         onClick={(e) => {
           e.stopPropagation(); // Prevent closing when clicking inside
           setZoomedImage(null);
         }}
       >
-        <FaTimes className="hover:text-gray-300" />
+        <FaTimes className="hover:text-black-300" />
       </button>
     </div>
   </div>
