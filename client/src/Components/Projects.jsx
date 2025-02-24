@@ -1,48 +1,56 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { FaTimes, FaSearchPlus } from "react-icons/fa"; // Importing icons
+
 import project1Img from "../assets/aws.png";
 import project2Img from "../assets/css-3.png";
 import project3Img from "../assets/github.png";
 import project4Img from "../assets/docker.png";
 import project5Img from "../assets/sql-server.png";
-import closeIcon from "../assets/close.png";
+
+import ncc1 from "../assets/ncc/ncc1.png";
+import ncc2 from "../assets/ncc/ncc2.png";
+import ncc3 from "../assets/ncc/ncc3.png";
+import ncc4 from "../assets/ncc/ncc4.png";
+import ncc5 from "../assets/ncc/ncc5.png";
+import ncc6 from "../assets/ncc/ncc6.png";
 
 const projects = [
   {
     name: "Project One",
     description: "A web application built with modern technologies.",
     image: project1Img,
-    gallery: ["../assets/ncc/ncc1.png", "../assets/ncc/ncc2.png", "../assets/ncc/ncc3.png",
-       "../assets/ncc/ncc4.png","../assets/ncc/ncc5.png", "../assets/ncc/ncc6.png"],
+    gallery: [ncc1, ncc2, ncc3, ncc4, ncc5, ncc6],
   },
   {
     name: "Project Two",
     description: "A full-stack project with backend integration.",
     image: project2Img,
-    gallery: ["../assets/project2-1.jpg", "../assets/project2-2.jpg"],
+    gallery: [],
   },
   {
     name: "Project Three",
     description: "A cloud-based solution using AWS services.",
     image: project3Img,
-    gallery: ["../assets/project3-1.jpg", "../assets/project3-2.jpg"],
+    gallery: [],
   },
   {
     name: "Project Four",
     description: "A containerized application using Docker.",
     image: project4Img,
-    gallery: ["../assets/project4-1.jpg", "../assets/project4-2.jpg"],
+    gallery: [],
   },
   {
     name: "Project Five",
     description: "A database management system with SQL Server.",
     image: project5Img,
-    gallery: ["../assets/project5-1.jpg", "../assets/project5-2.jpg"],
+    gallery: [],
   },
 ];
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [zoomedImage, setZoomedImage] = useState(null);
 
   return (
     <div className="flex flex-col items-center py-16 px-6 md:px-16 bg-transparent">
@@ -69,9 +77,7 @@ const Projects = () => {
               className="w-20 h-20 object-cover rounded-md shadow-sm mr-4"
             />
             <div>
-              <h3 className="text-lg font-medium text-gray-100">
-                {project.name}
-              </h3>
+              <h3 className="text-lg font-medium text-gray-100">{project.name}</h3>
               <p className="text-gray-400 text-sm">{project.description}</p>
             </div>
           </motion.div>
@@ -88,33 +94,76 @@ const Projects = () => {
           onClick={() => setSelectedProject(null)}
         >
           <motion.div
-            className="bg-[rgba(255,255,255,0.08)] backdrop-blur-lg p-6 rounded-xl shadow-lg max-w-3xl w-full relative 
+            className="bg-[rgba(255,255,255,0.08)] backdrop-blur-lg p-6 rounded-xl shadow-lg max-w-4xl w-full relative 
               border border-[#99c2ff] hover:shadow-blue-400/60"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Close Button */}
             <button
-              className="absolute top-3 right-3 bg-transparent border-none cursor-pointer"
+              className="absolute top-3 right-3 bg-transparent text-white text-2xl cursor-pointer"
               onClick={() => setSelectedProject(null)}
             >
-              <img src={closeIcon} alt="Close" className="w-6 h-6 opacity-60 hover:opacity-100 transition" />
+              <FaTimes className="hover:text-gray-300" />
             </button>
+
             <h3 className="text-2xl font-bold text-center mb-4 text-gray-200">
               {selectedProject.name} Gallery
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {selectedProject.gallery.map((img, idx) => (
-                <motion.img
+                <motion.div
                   key={idx}
-                  src={img}
-                  alt={selectedProject.name}
-                  className="w-full h-40 object-cover rounded-lg shadow-sm border border-[#99c2ff] 
-                    hover:shadow-md hover:shadow-blue-500/50 transition"
+                  className="relative"
                   whileHover={{ scale: 1.05 }}
-                />
+                >
+                  <img
+                    src={img}
+                    alt={selectedProject.name}
+                    className="w-full h-56 object-cover rounded-lg shadow-md border border-[#99c2ff]"
+                  />
+                  <button
+                    className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white p-2 rounded-full"
+                    onClick={() => setZoomedImage(img)}
+                  >
+                    <FaSearchPlus className="text-lg" />
+                  </button>
+                </motion.div>
               ))}
             </div>
+          </motion.div>
+        </motion.div>
+      )}
+
+      {/* Zoomed Image Modal */}
+      {zoomedImage && (
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setZoomedImage(null)}
+        >
+          <motion.div
+            className="relative max-w-4xl w-full p-4"
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Zoom Button */}
+            <button
+              className="absolute top-4 right-4 bg-black bg-opacity-70 text-white text-2xl p-2 rounded-full"
+              onClick={() => setZoomedImage(null)}
+            >
+              <FaTimes />
+            </button>
+            <img
+              src={zoomedImage}
+              alt="Zoomed"
+              className="w-full max-h-[90vh] object-contain rounded-lg"
+            />
           </motion.div>
         </motion.div>
       )}

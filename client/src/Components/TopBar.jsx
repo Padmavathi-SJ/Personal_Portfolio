@@ -5,8 +5,7 @@ import emailIcon from "../assets/gmail.png";
 
 const TopBar = () => {
   return (
-    <div className="fixed top-0 left-16 w-[calc(100%-4rem)] flex items-center justify-between bg-[var(--secondary-bg)] shadow-md px-2 py-2 z-50">
-      
+    <div className="fixed top-0 left-16 w-[calc(100%-4rem)] flex items-center justify-between bg-[var(--secondary-bg)] shadow-md px-2 py-2 z-40">
       {/* Logo and Title */}
       <div className="flex flex-col">
         <h1 className="text-[#B0C4DE] font-semibold text-4xs tracking-wide">
@@ -30,9 +29,9 @@ const TopBar = () => {
           <img src={emailIcon} alt="Gmail" className="w-8 h-9 hover:opacity-80 transition duration-300" />
         </a>
       </div>
-      
     </div>
   );
 };
 
 export default TopBar;
+
