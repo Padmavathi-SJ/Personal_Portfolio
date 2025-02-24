@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaTimes, FaSearchPlus } from "react-icons/fa"; // Importing icons
+import { FaTimes, FaSearchPlus } from "react-icons/fa"; // Icons for close & zoom
 
 import project1Img from "../assets/aws.png";
 import project2Img from "../assets/css-3.png";
@@ -112,18 +112,20 @@ const Projects = () => {
               {selectedProject.name} Gallery
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Scrollable Image Container */}
+            <div className="flex overflow-x-auto space-x-4 p-2">
               {selectedProject.gallery.map((img, idx) => (
                 <motion.div
                   key={idx}
-                  className="relative"
+                  className="relative flex-shrink-0"
                   whileHover={{ scale: 1.05 }}
                 >
                   <img
                     src={img}
                     alt={selectedProject.name}
-                    className="w-full h-56 object-cover rounded-lg shadow-md border border-[#99c2ff]"
+                    className="w-72 h-56 object-cover rounded-lg shadow-md border border-[#99c2ff]"
                   />
+                  {/* Zoom Button */}
                   <button
                     className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white p-2 rounded-full"
                     onClick={() => setZoomedImage(img)}
