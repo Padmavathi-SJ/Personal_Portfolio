@@ -15,6 +15,16 @@ import ncc4 from "../assets/ncc/ncc4.png";
 import ncc5 from "../assets/ncc/ncc5.png";
 import ncc6 from "../assets/ncc/ncc6.png";
 
+import ems1 from '../assets/EMS/ems1.png';
+import ems2 from '../assets/EMS/ems2.png';
+import ems3 from '../assets/EMS/ems3.png';
+import ems4 from '../assets/EMS/ems4.png';
+import ems5 from '../assets/EMS/ems5.png';
+import ems6 from '../assets/EMS/ems6.png';
+import ems7 from '../assets/EMS/ems7.png';
+import ems8 from '../assets/EMS/ems8.png';
+
+
 const projects = [
   {
     name: "Project One",
@@ -26,7 +36,7 @@ const projects = [
     name: "Project Two",
     description: "A full-stack project with backend integration.",
     image: project2Img,
-    gallery: [],
+    gallery: [ems1, ems2, ems3, ems4, ems5, ems6, ems7, ems8],
   },
   {
     name: "Project Three",
@@ -94,16 +104,16 @@ const Projects = () => {
 
       {selectedProject && selectedProject.gallery.length > 0 && (
         <motion.div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-          <motion.div className="bg-[rgba(255,255,255,0.08)] backdrop-blur-lg p-6 rounded-xl shadow-lg max-w-4xl w-full relative border border-[#99c2ff]">
-            <button className="absolute top-3 right-3 text-white text-2xl" onClick={() => setSelectedProject(null)}>
-              <FaTimes className="hover:text-gray-300" />
+          <motion.div className="bg-[rgba(255,255,255,0.08)] backdrop-blur-lg p-5 rounded-xl shadow-lg  max-w-3xl w-full relative border border-[#99c2ff]">
+            <button className="absolute top-3 right-3 text-white text-1xl" onClick={() => setSelectedProject(null)}>
+              <FaTimes className="hover:text-black-600" />
             </button>
 
-            <h3 className="text-2xl font-bold text-center mb-4 text-gray-200">{selectedProject.name} Gallery</h3>
+            <h3 className="text-2xl font-bold text-center text-gray-200">{selectedProject.name} Gallery</h3>
 
-            <div className="flex items-center justify-center relative w-full h-[400px]">
+            <div className="flex items-center justify-center relative w-full h-[350px]">
               <button
-                className="absolute left-2 bg-black bg-opacity-50 text-white p-3 rounded-full"
+                className="absolute left-2 text-white p-3"
                 onClick={handlePrev}
               >
                 <FaChevronLeft className="text-2xl" />
@@ -112,16 +122,16 @@ const Projects = () => {
                 <img
                   src={selectedProject.gallery[currentImageIndex]}
                   alt={selectedProject.name}
-                  className="w-full max-w-lg h-[350px] object-cover rounded-lg shadow-md border border-[#99c2ff] cursor-pointer"
+                  className="w-[520px] max-w-lg h-[250px] object-cover rounded-lg shadow-md border border-[#99c2ff] cursor-pointer"
                   onClick={() => setZoomedImage(selectedProject.gallery[currentImageIndex])}
                 />
                 <FaSearchPlus 
-                  className="absolute bottom-2 right-2 text-white text-xl bg-black bg-opacity-50 p-1 rounded cursor-pointer"
+                  className="absolute bottom-2 right-2 text-black text-xl bg-black bg-opacity-50 p-1 rounded p-1 cursor-pointer"
                   onClick={() => setZoomedImage(selectedProject.gallery[currentImageIndex])}
                 />
               </div>
               <button
-                className="absolute right-2 bg-black bg-opacity-50 text-white p-3 rounded-full"
+                className="absolute right-2 text-white p-3 "
                 onClick={handleNext}
               >
                 <FaChevronRight className="text-2xl" />
@@ -132,13 +142,40 @@ const Projects = () => {
               {selectedProject.gallery.map((_, index) => (
                 <div
                   key={index}
-                  className={`w-3 h-3 mx-1 rounded-full ${index === currentImageIndex ? "bg-blue-400" : "bg-gray-500"}`}
+                  className={`w-2 h-2 mx-1 rounded-full ${index === currentImageIndex ? "bg-blue-400" : "bg-gray-500"}`}
                 ></div>
               ))}
             </div>
           </motion.div>
         </motion.div>
       )}
+
+{zoomedImage && (
+  <div 
+    className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50" 
+    onClick={() => setZoomedImage(null)}
+  >
+    <div className="relative">
+      {/* Zoomed Image */}
+      <img 
+        src={zoomedImage} 
+        alt="Zoomed" 
+        className="max-w-5xl max-h-[85vh] rounded-lg shadow-lg border border-[#99c2ff] pointer-events-auto"
+      />
+      {/* Close Button */}
+      <button 
+        className="absolute top-4 right-4 text-white text-1xl"
+        onClick={(e) => {
+          e.stopPropagation(); // Prevent closing when clicking inside
+          setZoomedImage(null);
+        }}
+      >
+        <FaTimes className="hover:text-gray-300" />
+      </button>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };
