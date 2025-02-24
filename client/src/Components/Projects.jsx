@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaTimes, FaChevronLeft, FaChevronRight, FaSearchPlus } from "react-icons/fa";
 
 import project1Img from "../assets/aws.png";
 import project2Img from "../assets/css-3.png";
@@ -51,6 +51,7 @@ const projects = [
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [zoomedImage, setZoomedImage] = useState(null);
 
   const handleNext = () => {
     if (selectedProject) {
@@ -107,11 +108,18 @@ const Projects = () => {
               >
                 <FaChevronLeft className="text-2xl" />
               </button>
-              <img
-                src={selectedProject.gallery[currentImageIndex]}
-                alt={selectedProject.name}
-                className="w-full max-w-xl h-[400px] object-cover rounded-lg shadow-md border border-[#99c2ff]"
-              />
+              <div className="relative">
+                <img
+                  src={selectedProject.gallery[currentImageIndex]}
+                  alt={selectedProject.name}
+                  className="w-full max-w-lg h-[350px] object-cover rounded-lg shadow-md border border-[#99c2ff] cursor-pointer"
+                  onClick={() => setZoomedImage(selectedProject.gallery[currentImageIndex])}
+                />
+                <FaSearchPlus 
+                  className="absolute bottom-2 right-2 text-white text-xl bg-black bg-opacity-50 p-1 rounded cursor-pointer"
+                  onClick={() => setZoomedImage(selectedProject.gallery[currentImageIndex])}
+                />
+              </div>
               <button
                 className="absolute right-2 bg-black bg-opacity-50 text-white p-3 rounded-full"
                 onClick={handleNext}
