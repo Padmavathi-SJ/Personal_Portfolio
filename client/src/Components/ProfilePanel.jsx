@@ -1,5 +1,7 @@
 import resumePDF from "../assets/resume.pdf";
 import profileImage from "../assets/padma.jpeg";
+import linkedinIcon from "../assets/linkedin.png";
+import githubIcon from "../assets/github.png";
 
 const ProfilePanel = ({ isOpen, onClose }) => {
   return (
@@ -12,9 +14,9 @@ const ProfilePanel = ({ isOpen, onClose }) => {
         ></div>
       )}
 
-      {/* 🔹 Profile Panel - Wider with Sliding Effect */}
+      {/* 🔹 Profile Panel - Two Column Layout with Bottom Full Section */}
       <div
-        className={`fixed top-0 left-0 w-97 h-full bg-[var(--primary-bg)] text-white shadow-lg border-r border-gray-600 
+        className={`fixed top-0 left-0 w-1/4 h-full bg-gray-900 text-white shadow-xl border-r border-gray-700 
         transition-transform duration-500 ease-in-out z-[10000] p-6
         ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
@@ -26,35 +28,48 @@ const ProfilePanel = ({ isOpen, onClose }) => {
           ✕
         </button>
 
-        {/* Profile Image (Now Larger & Square) */}
-        <div className="flex flex-col items-center mt-6">
-          <div className="w-70 h-80 overflow-hidden  shadow-lg">
-            <img src={profileImage} alt="Developer Profile" className="w-full h-full object-cover" />
+        {/* Profile Image */}
+        <div className="flex justify-center">
+          <div className="w-48 h-60 overflow-hidden rounded-lg shadow-lg">
+            <img src={profileImage} alt="Developer Profile" className="w-full h-full object-cover rounded-md" />
           </div>
-          <h2 className="text-2xl font-bold mt-3">Padmavathi SJ</h2>
-          <p className="text-lg text-gray-300 italic">Full Stack Developer</p>
         </div>
 
-        {/* Divider */}
-        <div className="mt-4 border-t border-gray-600"></div>
+        {/* Contact Details */}
+        <div className="mt-6 text-center">
+          <h3 className="text-xl font-semibold text-blue-400">PADMAVATHI S J</h3>
+          <h4 className="text-lg font-semibold text-gray-300">Computer Science and Engineering</h4>
+          <p className="text-md text-gray-400 mt-1">Bannari Amman Institute of Technology</p>
+          <p className="text-md text-gray-400 mt-1">Sathyamangalam, Erode-638401, Tamil Nadu, India</p>
+        </div>
+        
+        {/* Social Media Links */}
+        <div className="mt-4 flex justify-center space-x-6">
+          <a href="https://linkedin.com/in/padmavathi" target="_blank" className="hover:opacity-75 transition">
+            <img src={linkedinIcon} alt="LinkedIn" className="w-8 h-8" />
+          </a>
+          <a href="https://github.com/padmavathi" target="_blank" className="hover:opacity-75 transition">
+            <img src={githubIcon} alt="GitHub" className="w-8 h-8" />
+          </a>
+        </div>
 
-        {/* About Section */}
-        <div className="mt-6">
-          <h3 className="text-xl font-semibold">About Me</h3>
-          <p className="text-md text-gray-400 mt-2">
+        {/* Full Width Bottom Section */}
+        <div className="mt-6 text-center border-t border-gray-700 pt-4">
+          <p className="text-md text-gray-400">
             Passionate Full Stack Developer skilled in React, Node.js, and Cloud Technologies.
           </p>
-        </div>
-
-        {/* Resume Download */}
-        <div className="mt-6">
-          <a
-            href={resumePDF}
-            download="Padmavathi_SJ_Resume.pdf"
-            className="block text-center bg-blue-500 py-3 rounded-md text-white text-lg hover:bg-blue-700 transition"
-          >
-            Download Resume
-          </a>
+          <p className="text-md text-gray-400 mt-1">
+            Building scalable and efficient applications with modern web technologies.
+          </p>
+          <div className="mt-4">
+            <a
+              href={resumePDF}
+              download="Padmavathi_SJ_Resume.pdf"
+              className="inline-block bg-blue-500 py-2 px-6 rounded-md text-white text-lg hover:bg-blue-700 transition"
+            >
+              Download Resume
+            </a>
+          </div>
         </div>
       </div>
     </>

@@ -13,14 +13,14 @@ const Profile = () => {
           <p className="text-gray-400 text-lg leading-relaxed">
             I am a <span className="text-[#00FFC6] font-semibold">Full Stack Developer</span>  
             with strong expertise in <span className="text-yellow-400 font-semibold">problem-solving, data structures, and algorithms</span>. 
-            My focus is on building <span className="text-orange-400 font-semibold">scalable and high-performance web applications</span>  
+            My focus is on building <span className="text-gray-400 text-lg leading-relaxed">scalable and high-performance web applications</span>  
             using <span className="text-cyan-400 font-semibold">React, Node.js, and AWS</span>.
           </p>
 
           <p className="text-gray-400 text-lg leading-relaxed mt-4">
             Beyond development, I am passionate about  
-            <span className="text-yellow-400 font-semibold"> competitive programming</span>, 
-            <span className="text-orange-400 font-semibold"> open-source contributions</span>,  
+            <span className="text-gray-400 text-lg leading-relaxed"> competitive programming</span>, 
+            <span className="text-gray-400 text-lg leading-relaxed"> open-source contributions</span>,  
             and staying up-to-date with the  
             <span className="text-cyan-400 font-semibold"> latest technology trends</span>.  
             My goal is to develop <span className="text-yellow-400 font-semibold">efficient and innovative solutions</span>  
