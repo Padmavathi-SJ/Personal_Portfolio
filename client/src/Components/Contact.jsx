@@ -8,15 +8,33 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitted Data:", formData);
-    // You can integrate backend/API to handle submissions
+    setLoading(true);
+    setResponseMessage("");
+
+    try {
+      const response = await fetch("http://localhost:5000/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      setResponseMessage(result.message);
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      setResponseMessage("Failed to send message. Try again later.");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -36,7 +54,7 @@ const Contact = () => {
         </p>
       </div>
 
-      {/* Outer Container with Light Border */}
+      {/* Outer Container */}
       <div className="flex flex-col md:flex-row items-center border border-gray-300 rounded-xl p-6 md:p-8 w-full max-w-5xl bg-transparent shadow-lg">
         {/* Left Section - Image */}
         <div className="hidden md:flex flex-1 justify-center items-center">
@@ -47,9 +65,8 @@ const Contact = () => {
           />
         </div>
 
-        {/* Right Section - Contact Form & Social Media */}
+        {/* Right Section - Contact Form */}
         <div className="flex-1 p-5 md:p-6 rounded-xl w-full md:w-[60%] bg-transparent">
-          {/* Contact Form */}
           <form className="space-y-3" onSubmit={handleSubmit}>
             <div>
               <label className="block text-[var(--primary-text)] font-semibold">
@@ -60,8 +77,8 @@ const Contact = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="John Doe"
-                className="w-full p-2 rounded-lg bg-transparent border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
+                placeholder="Your name"
+                className="text-blue-400 w-full p-2 rounded-lg bg-transparent border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
                 required
               />
             </div>
@@ -76,7 +93,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="example@example.com"
-                className="w-full p-2 rounded-lg bg-transparent border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
+                className="text-blue-400 w-full p-2 rounded-lg bg-transparent border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
                 required
               />
             </div>
@@ -91,7 +108,7 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="Type your message..."
                 rows="3"
-                className="w-full p-2 rounded-lg bg-transparent border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
+                className="text-blue-400 w-full p-2 rounded-lg bg-transparent border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
                 required
               ></textarea>
             </div>
@@ -99,10 +116,16 @@ const Contact = () => {
             <button
               type="submit"
               className="w-full py-2 text-lg font-semibold text-[var(--primary-color)] border border-[var(--primary-color)] rounded-lg bg-transparent hover:bg-[var(--primary-color)] hover:text-white transition"
+              disabled={loading}
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
+
+          {/* Display Response Message */}
+          {responseMessage && (
+            <p className="mt-4 text-center text-gray-300">{responseMessage}</p>
+          )}
         </div>
       </div>
     </motion.div>

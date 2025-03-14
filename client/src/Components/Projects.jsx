@@ -36,7 +36,7 @@ const projects = [
     description: "Interns Tracking Portal streamlines intern management for industries and institutions with task allocation, team collaboration, leave tracking, and feedback management. Users get a personalized dashboard to monitor work, update tasks, and manage personal details efficiently.",
     image: project2Img,
     gallery: [ems1, ems2, ems3, ems4, ems5, ems6, ems7, ems8],
-    repoLink: "https://github.com/yourusername/interns-tracking-portal",
+    repoLink: "https://github.com/Padmavathi-SJ/Interns-Tracking-System",
     role: "Worked as FullStack Developer (React JS, Node JS, Express JS, MySQL)"
   },
 
@@ -45,7 +45,7 @@ const projects = [
     description: "Online Coding Space is a platform for academic institutions, enabling students to practice faculty-assigned problems regularly. It features an integrated compiler for popular languages and allows admins to track and evaluate student submissions efficiently.",
     image: project3Img,
     gallery: [compiler1, compiler2, compiler3, compiler4, compiler5, compiler6, compiler7],
-    repoLink: "https://github.com/yourusername/online-coding-space",
+    repoLink: "https://github.com/Padmavathi-SJ/Online_Code_Space",
     role: "Worked as Frontend Developer (React JS)"
   },
 
@@ -54,7 +54,7 @@ const projects = [
     description: "College Events & Clubs Gallery is a digital space for students to upload and cherish their event memories. Users can share images, videos, and quotes, organizing them into personal folders to preserve unforgettable moments for the future.",
     image: project1Img,
     gallery: [ncc1, ncc2, ncc3, ncc4, ncc5, ncc6],
-    repoLink: "https://github.com/yourusername/campus-chronicles",
+    repoLink: "https://github.com/Padmavathi-SJ/NCC_Memoria",
     role: "Worked as FullStack Developer (React JS, Node JS, Express JS, MySQL)"
   },
 ];
@@ -147,7 +147,7 @@ const Projects = () => {
         )}
   
 
-{zoomedImage && (
+ { zoomedImage && (
   <div 
     className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50" 
     onClick={() => setZoomedImage(null)}
