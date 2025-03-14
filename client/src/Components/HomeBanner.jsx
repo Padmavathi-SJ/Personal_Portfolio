@@ -22,7 +22,7 @@ const HomeBanner = () => {
           <span className="text-3xl text-yellow-300 font-bold">
             <Typewriter
               words={[
-                "If you want to shine like a Sun, first burn like a Sun."
+                "If you want to shine like a Sun, first burn like a Sun!"
               ]}
               loop={true}
               typeSpeed={80}

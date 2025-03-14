@@ -22,10 +22,23 @@ const Sidebar = () => {
           <img src={profileImage} alt="Developer Profile" className="w-full h-full object-cover" />
         </div>
 
-        {/* Profile Icon Below Profile Image */}
-        <div className="mt-3 w-8 h-8 cursor-pointer" onClick={() => setIsOpen(true)}>
-          <img src={profileIcon} alt="Profile Panel" className="w-full h-full object-cover hover:opacity-80 transition" />
-        </div>
+{/* Profile Icon Below Profile Image */}
+<div className="relative mt-3 w-8 h-8 cursor-pointer group" onClick={() => setIsOpen(true)}>
+  {/* Profile Icon */}
+  <img
+    src={profileIcon}
+    alt="Profile Panel"
+    className="w-full h-full object-cover hover:opacity-80 transition"
+  />
+
+  {/* Tooltip - "Hire Me" */}
+  <span className="absolute left-12 top-1/2 -translate-y-1/2 text-white text-sm px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+    Hire Me
+  </span>
+</div>
+
+
+
 
         {/* Sidebar Icons */}
         <div className="flex flex-col flex-1 justify-center space-y-6 items-center mt-6">
