@@ -2,10 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaTimes, FaChevronLeft, FaChevronRight, FaSearchPlus } from "react-icons/fa";
 
-import project1Img from "../assets/aws.png";
-import project2Img from "../assets/css-3.png";
-import project3Img from "../assets/github.png";
-
+import project1Img from "../assets/ems.jpg";
+import project2Img from "../assets/ncc.jpg";
+import project3Img from "../assets/compiler.jpg";
 
 import ncc1 from "../assets/ncc/ncc1.png";
 import ncc2 from "../assets/ncc/ncc2.png";
@@ -23,26 +22,41 @@ import ems6 from '../assets/EMS/ems6.png';
 import ems7 from '../assets/EMS/ems7.png';
 import ems8 from '../assets/EMS/ems8.png';
 
+import compiler1 from '../assets/compiler/compiler1.png';
+import compiler2 from '../assets/compiler/compiler2.png';
+import compiler3 from '../assets/compiler/compiler3.png';
+import compiler4 from '../assets/compiler/compiler4.png';
+import compiler5 from '../assets/compiler/compiler5.png';
+import compiler6 from '../assets/compiler/compiler6.png';
+import compiler7 from '../assets/compiler/compiler7.png';
 
 const projects = [
   {
-    name: "Project One",
-    description: "A web application built with modern technologies.",
-    image: project1Img,
-    gallery: [ncc1, ncc2, ncc3, ncc4, ncc5, ncc6],
-  },
-  {
-    name: "Project Two",
-    description: "A full-stack project with backend integration.",
+    name: "Interns Tracking Portal",
+    description: "Interns Tracking Portal streamlines intern management for industries and institutions with task allocation, team collaboration, leave tracking, and feedback management. Users get a personalized dashboard to monitor work, update tasks, and manage personal details efficiently.",
     image: project2Img,
     gallery: [ems1, ems2, ems3, ems4, ems5, ems6, ems7, ems8],
+    repoLink: "https://github.com/yourusername/interns-tracking-portal",
+    role: "Worked as FullStack Developer (React JS, Node JS, Express JS, MySQL)"
   },
+
   {
-    name: "Project Three",
-    description: "A cloud-based solution using AWS services.",
+    name: "Online Coding Space",
+    description: "Online Coding Space is a platform for academic institutions, enabling students to practice faculty-assigned problems regularly. It features an integrated compiler for popular languages and allows admins to track and evaluate student submissions efficiently.",
     image: project3Img,
-    gallery: [],
-  }
+    gallery: [compiler1, compiler2, compiler3, compiler4, compiler5, compiler6, compiler7],
+    repoLink: "https://github.com/yourusername/online-coding-space",
+    role: "Worked as Frontend Developer (React JS)"
+  },
+
+  {
+    name: "Campus Chronicles",
+    description: "College Events & Clubs Gallery is a digital space for students to upload and cherish their event memories. Users can share images, videos, and quotes, organizing them into personal folders to preserve unforgettable moments for the future.",
+    image: project1Img,
+    gallery: [ncc1, ncc2, ncc3, ncc4, ncc5, ncc6],
+    repoLink: "https://github.com/yourusername/campus-chronicles",
+    role: "Worked as FullStack Developer (React JS, Node JS, Express JS, MySQL)"
+  },
 ];
 
 const Projects = () => {
@@ -68,11 +82,11 @@ const Projects = () => {
     <div className="flex flex-col items-center py-16 px-6 md:px-16 bg-transparent">
       <h2 className="text-4xl font-semibold text-gray-200 mb-12">Projects</h2>
 
-      <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+      <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="relative flex items-center border border-[#99c2ff] rounded-xl p-6 
+            className="relative flex items-center border border-[#99c2ff] rounded-xl p-3
               bg-[rgba(255,255,255,0.05)] backdrop-blur-lg shadow-md transition-all 
               transform hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/50"
             onClick={() => {
@@ -80,7 +94,7 @@ const Projects = () => {
               setCurrentImageIndex(0);
             }}
           >
-            <img src={project.image} alt={project.name} className="w-20 h-20 object-cover rounded-md shadow-sm mr-4" />
+            <img src={project.image} alt={project.name} className="w-32 h-32 object-cover rounded-md shadow-sm mr-4" />
             <div>
               <h3 className="text-lg font-medium text-gray-100">{project.name}</h3>
               <p className="text-gray-400 text-sm">{project.description}</p>
@@ -91,18 +105,29 @@ const Projects = () => {
 
       {selectedProject && selectedProject.gallery.length > 0 && (
         <motion.div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-          <motion.div className="bg-[rgba(255,255,255,0.08)] backdrop-blur-lg p-5 rounded-xl shadow-lg  max-w-3xl w-full relative border border-[#99c2ff]">
+          <motion.div className="bg-[rgba(255,255,255,0.08)] backdrop-blur-lg p-5 rounded-xl shadow-lg max-w-3xl w-full relative border border-[#99c2ff]">
+            
+            {/* GitHub Repository Button */}
+            <a
+              href={selectedProject.repoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute top-3 left-3 px-3 py-1 border border-blue-400 text-white rounded-md text-sm transition-all 
+              hover:bg-blue-400 hover:text-black"
+            >
+              View GitHub Repository
+            </a>
+
             <button className="absolute top-3 right-3 text-white text-1xl" onClick={() => setSelectedProject(null)}>
               <FaTimes className="hover:text-black-600" />
             </button>
 
-            <h3 className="text-2xl font-bold text-center text-gray-200">{selectedProject.name} Gallery</h3>
+            <h3 className="text-2xl font-bold text-center text-gray-200">{selectedProject.name}</h3>
+
+            <p className="mt-5 text-white text-center">{selectedProject.role}</p>
 
             <div className="flex items-center justify-center relative w-full h-[350px]">
-              <button
-                className="absolute left-2 text-white p-3"
-                onClick={handlePrev}
-              >
+              <button className="absolute left-2 text-white p-3" onClick={handlePrev}>
                 <FaChevronLeft className="text-2xl" />
               </button>
               <div className="relative">
@@ -112,30 +137,15 @@ const Projects = () => {
                   className="w-[520px] max-w-lg h-[250px] object-cover rounded-lg shadow-md border border-[#99c2ff] cursor-pointer"
                   onClick={() => setZoomedImage(selectedProject.gallery[currentImageIndex])}
                 />
-                <FaSearchPlus 
-                  className="absolute bottom-2 right-2 text-black text-xl bg-black bg-opacity-50 p-1 rounded p-1 cursor-pointer"
-                  onClick={() => setZoomedImage(selectedProject.gallery[currentImageIndex])}
-                />
               </div>
-              <button
-                className="absolute right-2 text-white p-3 "
-                onClick={handleNext}
-              >
+              <button className="absolute right-2 text-white p-3 " onClick={handleNext}>
                 <FaChevronRight className="text-2xl" />
               </button>
             </div>
-
-            <div className="flex justify-center mt-4">
-              {selectedProject.gallery.map((_, index) => (
-                <div
-                  key={index}
-                  className={`w-2 h-2 mx-1 rounded-full ${index === currentImageIndex ? "bg-blue-400" : "bg-gray-500"}`}
-                ></div>
-              ))}
-            </div>
           </motion.div>
         </motion.div>
-      )}
+        )}
+  
 
 {zoomedImage && (
   <div 
@@ -162,8 +172,7 @@ const Projects = () => {
     </div>
   </div>
 )}
-
-    </div>
+   </div>
   );
 };
 

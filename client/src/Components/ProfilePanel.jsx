@@ -1,7 +1,7 @@
 import resumePDF from "../assets/resume.pdf";
 import profileImage from "../assets/padma.jpeg";
-import linkedinIcon from "../assets/linkedin.png";
-import githubIcon from "../assets/github.png";
+import phoneIcon from "../assets/call.png";
+import emailIcon from "../assets/gmail.png";
 
 const ProfilePanel = ({ isOpen, onClose }) => {
   return (
@@ -23,7 +23,7 @@ const ProfilePanel = ({ isOpen, onClose }) => {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-white text-2xl cursor-pointer bg-gray-700 rounded-full w-8 h-8 flex items-center justify-center hover:bg-red-500 transition"
+          className="absolute top-4 right-4 text-white text-1xl cursor-pointer  rounded-full w-8 h-8 flex items-center justify-center transition"
         >
           ✕
         </button>
@@ -42,15 +42,17 @@ const ProfilePanel = ({ isOpen, onClose }) => {
           <p className="text-md text-gray-400 mt-1">Bannari Amman Institute of Technology</p>
           <p className="text-md text-gray-400 mt-1">Sathyamangalam, Erode-638401, Tamil Nadu, India</p>
         </div>
-        
-        {/* Social Media Links */}
-        <div className="mt-4 flex justify-center space-x-6">
-          <a href="https://linkedin.com/in/padmavathi" target="_blank" className="hover:opacity-75 transition">
-            <img src={linkedinIcon} alt="LinkedIn" className="w-8 h-8" />
-          </a>
-          <a href="https://github.com/padmavathi" target="_blank" className="hover:opacity-75 transition">
-            <img src={githubIcon} alt="GitHub" className="w-8 h-8" />
-          </a>
+
+        {/* Contact Icons */}
+        <div className="mt-4 flex flex-col items-center space-y-3">
+          <div className="flex items-center space-x-3">
+            <img src={phoneIcon} alt="Phone" className="w-6 h-6" />
+            <span className="text-md text-gray-300">+91 8300770817</span>
+          </div>
+          <div className="flex items-center space-x-3">
+            <img src={emailIcon} alt="Email" className="w-6 h-6" />
+            <span className="text-md text-gray-300">padmavathisj2005@gmail.com</span>
+          </div>
         </div>
 
         {/* Full Width Bottom Section */}

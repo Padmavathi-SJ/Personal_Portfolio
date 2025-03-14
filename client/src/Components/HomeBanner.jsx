@@ -16,7 +16,7 @@ const HomeBanner = () => {
   return (
     <div className="relative flex flex-col items-center justify-center w-full min-h-screen bg-transparent">
 
-      {/* 🔝 Quote Box - Now with Full Typewriter Effect */}
+      {/* 🔝 Quote Box - Full Typewriter Effect */}
       <div className="absolute top-10 flex justify-center w-full">
         <div className="text-white px-6 py-2 rounded-lg shadow-md text-center text-lg font-semibold border border-gray-500">
           <span className="text-3xl text-yellow-300 font-bold">
@@ -39,15 +39,15 @@ const HomeBanner = () => {
         {/* Left Side - Developer Info */}
         <div className="flex flex-col space-y-4 text-white">
           <h1 className="text-4xl font-bold text-white">
-            Hi, I'm <span className="text-[oklch(0.623 0.214 259.815)]">Padmavathi SJ</span>
+            Hi, I'm <span className="text-blue-400">Padmavathi SJ</span>
           </h1>
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-2xl font-semibold text-yellow-200">
             Full Stack Developer
           </h2>
-          <p className="text-xl text-white">
+          <p className="text-1xl text-white">
             I build dynamic, scalable web applications using 
-            <span className="text-white font-semibold"> React, Node.js,</span> and 
-            <span className="text-white font-semibold"> cloud technologies</span>. 
+            <span className="text-blue-400 font-semibold"> React, Node.js,</span> and 
+            <span className="text-blue-400 font-semibold"> cloud technologies</span>. 
             Passionate about problem-solving, backend optimization, and deploying 
             efficient solutions in the cloud.
           </p>
@@ -56,7 +56,7 @@ const HomeBanner = () => {
               href="https://github.com/Padmavathi-SJ"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[oklch(0.623 0.214 259.815)] text-white font-semibold px-5 py-2 rounded-lg shadow-lg hover:opacity-90 transition-all duration-300"
+              className=" text-white font-semibold px-5 py-2 rounded-lg shadow-lg border border-blue-500 transition-all duration-300"
             >
               View My Work
             </a>

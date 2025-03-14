@@ -7,27 +7,33 @@ const Profile = () => {
         {/* Left Content (About Section) */}
         <div className="w-3/4 pr-10">
           <h2 className="text-4xl font-semibold text-gray-200 mb-6">
-            About <span className="text-[#00FFC6]">Padmavathi SJ</span>
+            I'm <span className="text-[#00FFC6]">Padmavathi SJ</span>
           </h2>
 
-          <p className="text-gray-400 text-lg leading-relaxed">
-            I am a <span className="text-[#00FFC6] font-semibold">Full Stack Developer</span>  
-            with strong expertise in <span className="text-yellow-400 font-semibold">problem-solving, data structures, and algorithms</span>. 
-            My focus is on building <span className="text-gray-400 text-lg leading-relaxed">scalable and high-performance web applications</span>  
-            using <span className="text-cyan-400 font-semibold">React, Node.js, and AWS</span>.
+          <p className="text-white text-1xl leading-relaxed">
+          I am a Computer Science and Engineering student with a 
+          strong passion for Full Stack Development, specializing 
+          in React.js, Node.js, Express.js, and MySQL. I focus on 
+          building scalable, high-performance web applications while 
+          continuously refining my skills in modern web technologies. 
+          With a keen eye for clean, maintainable code and a user-centric 
+          approach, I strive to develop seamless and efficient digital solutions.
+          </p>
+          <br></br>
+
+          <h2 className="text-4xl font-semibold text-gray-200 mb-6">
+            Why To Choose Me?
+          </h2>
+
+          <p className="text-white text-1xl leading-relaxed mt-4">
+          I specialize in full-stack development with expertise in React.js, 
+          Node.js, Express.js, and MySQL, ensuring seamless integration and 
+          high-performance applications. Committed to continuous learning, I 
+          stay updated with the latest web development trends to build scalable, 
+          efficient, and user-friendly solutions tailored to business needs.
           </p>
 
-          <p className="text-gray-400 text-lg leading-relaxed mt-4">
-            Beyond development, I am passionate about  
-            <span className="text-gray-400 text-lg leading-relaxed"> competitive programming</span>, 
-            <span className="text-gray-400 text-lg leading-relaxed"> open-source contributions</span>,  
-            and staying up-to-date with the  
-            <span className="text-cyan-400 font-semibold"> latest technology trends</span>.  
-            My goal is to develop <span className="text-yellow-400 font-semibold">efficient and innovative solutions</span>  
-            while continuously sharpening my skills.
-          </p>
-
-          <p className="text-gray-400 text-lg leading-relaxed mt-4">
+          <p className="text-white text-lg leading-relaxed mt-4">
             Let’s <span className="text-[#00FFC6] font-semibold">connect and collaborate</span> to build something impactful! 🚀
           </p>
         </div>

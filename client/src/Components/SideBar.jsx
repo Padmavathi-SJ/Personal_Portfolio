@@ -4,7 +4,7 @@ import homeIcon from "../assets/home-button.png";
 import userIcon from "../assets/information.png";
 import skillsIcon from "../assets/pencil.png";
 import projectsIcon from "../assets/idea.png";
-import certificationsIcon from "../assets/medal.png";
+//import certificationsIcon from "../assets/medal.png";
 import contactIcon from "../assets/contact-us.png";
 import profileImage from "../assets/padma-clg.png";
 import ProfilePanel from "./ProfilePanel";
@@ -46,9 +46,11 @@ const Sidebar = () => {
             <img src={projectsIcon} alt="Projects" className="w-6 h-6" />
           </Link>
 
+          {/*
           <Link to="/certifications" className="hover:opacity-80 transition duration-300">
             <img src={certificationsIcon} alt="Certifications" className="w-6 h-6" />
           </Link>
+          */}
 
           <Link to="/contact" className="hover:opacity-80 transition duration-300">
             <img src={contactIcon} alt="Contact" className="w-6 h-6" />

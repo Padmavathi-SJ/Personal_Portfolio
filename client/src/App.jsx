@@ -6,8 +6,9 @@ import Home from "./Components/Home";
 import Profile from "./Components/Profile";
 import Skills from "./Components/Skills";
 import Projects from "./Components/Projects";
-import Certifications from "./Components/Certifications";
+//import Certifications from "./Components/Certifications";
 import Contact from "./Components/Contact";
+import './Components/global.css';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -30,7 +31,7 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/skills" element={<Skills />} />
               <Route path="/projects" element={<Projects />} />
-              <Route path="/certifications" element={<Certifications />} />
+           { /*  <Route path="/certifications" element={<Certifications />} /> */}
               <Route path="/contact" element={<Contact />} /> {/* ✅ Fixed Case Issue */}
             </Routes>
           </div>

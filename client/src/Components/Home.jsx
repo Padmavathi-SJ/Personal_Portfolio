@@ -5,7 +5,7 @@ import HomeBanner from "./HomeBanner";
 import Profile from "./Profile";
 import Skills from "./Skills";
 import Projects from "./Projects";
-import Certifications from "./Certifications";
+//import Certifications from "./Certifications";
 import Contact from "./Contact";
 import "./global.css";
 
@@ -57,11 +57,14 @@ const Home = () => {
 
           <hr className="border-[var(--accent-color)] opacity-50 w-full" />
 
+          {/*
+
           <section id="certifications" className="min-h-screen bg-transparent">
             <Certifications />
           </section>
 
           <hr className="border-[var(--accent-color)] opacity-50 w-full" />
+          */}
 
           <section id="contact" className="min-h-screen bg-transparent">
             <Contact />
