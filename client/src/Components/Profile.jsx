@@ -6,16 +6,29 @@ const Profile = () => {
       <div className="flex w-3/4 max-w-6xl items-center justify-between">
         {/* Left Content (About Section) */}
         <div className="w-3/4 pr-10">
-          <h2 className="text-4xl font-semibold text-gray-200 mb-6">About Me</h2>
+          <h2 className="text-4xl font-semibold text-gray-200 mb-6">
+            About <span className="text-[#00FFC6]">Padmavathi SJ</span>
+          </h2>
 
           <p className="text-gray-400 text-lg leading-relaxed">
-            I am a passionate Full Stack & Cloud Developer specializing in modern web technologies.
-            My expertise includes building scalable applications using React, Node.js, and cloud services like AWS.
-            With a strong foundation in problem-solving and data structures, I strive to develop efficient and optimized solutions.
+            I am a <span className="text-[#00FFC6] font-semibold">Full Stack Developer</span>  
+            with strong expertise in <span className="text-yellow-400 font-semibold">problem-solving, data structures, and algorithms</span>. 
+            My focus is on building <span className="text-orange-400 font-semibold">scalable and high-performance web applications</span>  
+            using <span className="text-cyan-400 font-semibold">React, Node.js, and AWS</span>.
           </p>
+
           <p className="text-gray-400 text-lg leading-relaxed mt-4">
-            I enjoy contributing to open-source projects, staying up-to-date with the latest tech trends, and continuously improving my skills.
-            Let’s connect and collaborate to build amazing projects together!
+            Beyond development, I am passionate about  
+            <span className="text-yellow-400 font-semibold"> competitive programming</span>, 
+            <span className="text-orange-400 font-semibold"> open-source contributions</span>,  
+            and staying up-to-date with the  
+            <span className="text-cyan-400 font-semibold"> latest technology trends</span>.  
+            My goal is to develop <span className="text-yellow-400 font-semibold">efficient and innovative solutions</span>  
+            while continuously sharpening my skills.
+          </p>
+
+          <p className="text-gray-400 text-lg leading-relaxed mt-4">
+            Let’s <span className="text-[#00FFC6] font-semibold">connect and collaborate</span> to build something impactful! 🚀
           </p>
         </div>
 

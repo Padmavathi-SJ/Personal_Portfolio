@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import homeIcon from "../assets/home-button.png";
 import userIcon from "../assets/information.png";
 import skillsIcon from "../assets/pencil.png";
@@ -28,24 +29,31 @@ const Sidebar = () => {
 
         {/* Sidebar Icons */}
         <div className="flex flex-col flex-1 justify-center space-y-6 items-center mt-6">
-          <button className="hover:opacity-80 transition duration-300">
+
+          <Link to="/" className="hover:opacity-80 transition duration-300">
             <img src={homeIcon} alt="Home" className="w-6 h-6" />
-          </button>
-          <button className="hover:opacity-80 transition duration-300">
+          </Link>
+
+          <Link to="/profile" className="hover:opacity-80 transition duration-300">
             <img src={userIcon} alt="Profile" className="w-6 h-6" />
-          </button>
-          <button className="hover:opacity-80 transition duration-300">
+          </Link>
+
+          <Link to="/skills" className="hover:opacity-80 transition duration-300">
             <img src={skillsIcon} alt="Skills" className="w-6 h-6" />
-          </button>
-          <button className="hover:opacity-80 transition duration-300">
+          </Link>
+
+          <Link to="/projects" className="hover:opacity-80 transition duration-300">
             <img src={projectsIcon} alt="Projects" className="w-6 h-6" />
-          </button>
-          <button className="hover:opacity-80 transition duration-300">
+          </Link>
+
+          <Link to="/certifications" className="hover:opacity-80 transition duration-300">
             <img src={certificationsIcon} alt="Certifications" className="w-6 h-6" />
-          </button>
-          <button className="hover:opacity-80 transition duration-300">
+          </Link>
+
+          <Link to="/contact" className="hover:opacity-80 transition duration-300">
             <img src={contactIcon} alt="Contact" className="w-6 h-6" />
-          </button>
+          </Link>
+          
         </div>
       </div>
 

@@ -13,7 +13,23 @@ import kubernetesImage from "../assets/html-5.png";
 
 const HomeBanner = () => {
   return (
-    <div className="flex items-center justify-center w-full py-16 bg-transparent">
+    <div className="flex flex-col items-center justify-center w-full py-16 bg-transparent">
+      
+      {/* Quote Box - Aligned at the Top */}
+      <div className="w-full flex justify-center mb-6">
+        <div className="text-white px-6 py-2 rounded-lg shadow-md text-center text-lg font-semibold border border-gray-500">
+          <span className="text-yellow-300 font-bold">"If you </span>
+          <span className="text-yellow-300 font-bold">shine</span>
+          <span className="text-yellow-300"> like a </span>
+          <span className="text-orange-500 font-bold">Sun</span>
+          <span className="text-yellow-300">, first </span>
+          <span className="text-red-500 font-bold">burn</span>
+          <span className="text-yellow-300"> like a </span>
+          <span className="text-orange-500 font-bold">Sun"</span>
+        </div>
+      </div>
+
+      {/* Main Banner Section */}
       <div className="grid grid-cols-2 gap-8 w-3/4 max-w-6xl items-center">
         
         {/* Left Side - Developer Info */}
@@ -22,15 +38,18 @@ const HomeBanner = () => {
             Hi, I'm <span className="text-[#00FFC6]">Padmavathi SJ</span>
           </h1>
           <h2 className="text-2xl font-semibold text-gray-300">
-            Full Stack & Cloud Developer
+            Full Stack Developer
           </h2>
-          <p className="text-sm text-gray-400">
-            Passionate about building high-performance, scalable applications using modern web and cloud technologies.
-            Specializing in React, Node.js, and AWS to deliver seamless digital solutions.
+          <p className="text-xl text-gray-400">
+            I build dynamic, scalable web applications using 
+            <span className="text-blue-400 font-semibold"> React, Node.js,</span> and 
+            <span className="text-yellow-400 font-semibold"> cloud technologies</span>. 
+            Passionate about problem-solving, backend optimization, and deploying 
+            efficient solutions in the cloud.
           </p>
           <div>
             <a
-              href="https://your-portfolio-link.com"
+              href="https://github.com/Padmavathi-SJ"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#00FFC6] text-gray-900 font-semibold px-5 py-2 rounded-lg shadow-lg hover:bg-[#00E6B0] transition-all duration-300"

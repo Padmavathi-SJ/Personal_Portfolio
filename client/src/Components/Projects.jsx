@@ -5,8 +5,7 @@ import { FaTimes, FaChevronLeft, FaChevronRight, FaSearchPlus } from "react-icon
 import project1Img from "../assets/aws.png";
 import project2Img from "../assets/css-3.png";
 import project3Img from "../assets/github.png";
-import project4Img from "../assets/docker.png";
-import project5Img from "../assets/sql-server.png";
+
 
 import ncc1 from "../assets/ncc/ncc1.png";
 import ncc2 from "../assets/ncc/ncc2.png";
@@ -43,19 +42,7 @@ const projects = [
     description: "A cloud-based solution using AWS services.",
     image: project3Img,
     gallery: [],
-  },
-  {
-    name: "Project Four",
-    description: "A containerized application using Docker.",
-    image: project4Img,
-    gallery: [],
-  },
-  {
-    name: "Project Five",
-    description: "A database management system with SQL Server.",
-    image: project5Img,
-    gallery: [],
-  },
+  }
 ];
 
 const Projects = () => {

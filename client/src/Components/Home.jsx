@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import TopBar from "./TopBar";
 import Sidebar from "./SideBar";
-
-import HomeBanner from "./HomeBanner"; // Home section banner
-import Profile from "./Profile"; // About section
+import HomeBanner from "./HomeBanner";
+import Profile from "./Profile";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Certifications from "./Certifications";
@@ -17,21 +16,31 @@ const Home = () => {
       <Sidebar />
 
       <div className="flex flex-col w-full ml-16">
-        {/* TopBar - No Overlapping, No Extra Space */}
+        {/* TopBar */}
         <TopBar />
 
-        {/* Main content area without extra margins */}
+        {/* Quote - Single Line Below TopBar */}
+        <p className="text-center text-lg md:text-xl font-semibold text-[var(--accent-color)] mt-4">
+          <span className="text-3xl md:text-4xl text-yellow-400 font-extrabold">“</span>
+          If you <span className="text-yellow-400 font-extrabold">shine</span> like a 
+          <span className="text-orange-500 font-extrabold"> Sun</span>, first 
+          <span className="text-red-500 font-extrabold"> burn</span> like a 
+          <span className="text-orange-500 font-extrabold"> Sun</span>.
+          <span className="text-3xl md:text-4xl text-yellow-400 font-extrabold">”</span>
+        </p>
+
+        {/* Main content area */}
         <div className="h-full p-6">
           {/* Home Section */}
           <section id="home" className="min-h-screen bg-transparent flex items-center justify-center">
-            <HomeBanner /> {/* Default Home Component */}
+            <HomeBanner />
           </section>
 
           <hr className="border-[var(--accent-color)] opacity-50 w-full" />
 
           {/* About Section */}
           <section id="about" className="min-h-screen bg-transparent flex items-center justify-center">
-            <Profile /> {/* About Developer Component */}
+            <Profile />
           </section>
 
           <hr className="border-[var(--accent-color)] opacity-50 w-full" />

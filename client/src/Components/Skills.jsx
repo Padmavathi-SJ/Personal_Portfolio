@@ -11,8 +11,7 @@ import sqlIcon from "../assets/sql-server.png";
 import mysqlIcon from "../assets/mysql.png";
 import gitIcon from "../assets/git.png";
 import githubIcon from "../assets/github.png";
-import dockerIcon from "../assets/docker.png";
-import awsIcon from "../assets/AWS.png";
+
 
 const skillsData = [
   { name: "C", icon: cIcon, level: 85 },
@@ -27,8 +26,7 @@ const skillsData = [
   { name: "MySQL", icon: mysqlIcon, level: 85 },
   { name: "Git", icon: gitIcon, level: 95 },
   { name: "GitHub", icon: githubIcon, level: 90 },
-  { name: "Docker", icon: dockerIcon, level: 60 },
-  { name: "AWS Cloud", icon: awsIcon, level: 75 },
+
 ];
 
 const Skills = () => {
@@ -36,8 +34,7 @@ const Skills = () => {
     <div className="py-16 px-6 md:px-16 bg-transparent">
       {/* Title & Subtitle */}
       <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-gray-200">My Technical Skills</h2>
-        <p className="text-lg text-gray-400 mt-2">Proficiency Levels in Various Technologies</p>
+        <h2 className="text-3xl font-bold text-gray-200">Technical Skills</h2>
       </div>
 
       {/* Skills Grid */}
