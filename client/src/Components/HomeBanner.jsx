@@ -13,23 +13,23 @@ import kubernetesImage from "../assets/html-5.png";
 
 const HomeBanner = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full py-16 bg-transparent">
+    <div className="flex flex-col items-center justify-center w-full min-h-screen bg-transparent">
       
-      {/* Quote Box - Aligned at the Top */}
+      {/* 🔝 Quote Box - Immediately Below TopBar */}
       <div className="w-full flex justify-center mb-6">
-        <div className="text-white px-6 py-2 rounded-lg shadow-md text-center text-lg font-semibold border border-gray-500">
-          <span className="text-yellow-300 font-bold">"If you </span>
+        <div className="bg-gray-900 text-white px-6 py-2 rounded-lg shadow-md text-center text-lg font-semibold border border-gray-500">
+          <span className="text-gray-300">"If you </span>
           <span className="text-yellow-300 font-bold">shine</span>
-          <span className="text-yellow-300"> like a </span>
+          <span className="text-gray-300"> like a </span>
           <span className="text-orange-500 font-bold">Sun</span>
-          <span className="text-yellow-300">, first </span>
+          <span className="text-gray-300">, first </span>
           <span className="text-red-500 font-bold">burn</span>
-          <span className="text-yellow-300"> like a </span>
+          <span className="text-gray-300"> like a </span>
           <span className="text-orange-500 font-bold">Sun"</span>
         </div>
       </div>
 
-      {/* Main Banner Section */}
+      {/* Main Banner Section - Centered on Page */}
       <div className="grid grid-cols-2 gap-8 w-3/4 max-w-6xl items-center">
         
         {/* Left Side - Developer Info */}
@@ -100,3 +100,4 @@ const HomeBanner = () => {
 };
 
 export default HomeBanner;
+
