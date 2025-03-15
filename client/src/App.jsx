@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Loader from "./Components/Loader";
-import Sidebar from "./Components/Sidebar"; // ✅ Added Sidebar
+import Sidebar from "./Components/SiBebar"; // ✅ Added Sidebar
 import Home from "./Components/Home";
 import Profile from "./Components/Profile";
 import Skills from "./Components/Skills";
