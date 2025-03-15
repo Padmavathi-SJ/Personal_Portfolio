@@ -37,7 +37,7 @@ const ProfilePanel = ({ isOpen, onClose }) => {
 
         {/* Contact Details */}
         <div className="mt-6 text-center">
-          <h3 className="text-xl font-semibold text-blue-400">PADMAVATHI S J</h3>
+          <h3 className="text-xl font-semibold text-blue-400">PADMAVATHI</h3>
           <h4 className="text-lg font-semibold text-gray-300">Computer Science and Engineering</h4>
           <p className="text-md text-gray-400 mt-1">Bannari Amman Institute of Technology</p>
           <p className="text-md text-gray-400 mt-1">Sathyamangalam, Erode-638401, Tamil Nadu, India</p>

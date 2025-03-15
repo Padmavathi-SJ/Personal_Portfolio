@@ -11,26 +11,26 @@ import "./global.css";
 
 const Home = () => {
   return (
-    <div className="relative flex">
+    <div className="relative flex flex-col md:flex-row">
       {/* Sidebar - Fixed */}
       <Sidebar />
 
-      <div className="flex flex-col w-full ml-16">
+      <div className="flex flex-col w-full md:ml-16">
         {/* TopBar */}
         <TopBar />
 
         {/* Quote - Single Line Below TopBar */}
-        <p className="text-center text-lg md:text-xl font-semibold text-[var(--accent-color)] mt-4">
-          <span className="text-3xl md:text-4xl text-yellow-400 font-extrabold">“</span>
+        <p className="text-center text-base sm:text-lg md:text-xl font-semibold text-[var(--accent-color)] mt-4 px-4">
+          <span className="text-2xl sm:text-3xl md:text-4xl text-yellow-400 font-extrabold">“</span>
           If you <span className="text-yellow-400 font-extrabold">shine</span> like a 
           <span className="text-orange-500 font-extrabold"> Sun</span>, first 
           <span className="text-red-500 font-extrabold"> burn</span> like a 
           <span className="text-orange-500 font-extrabold"> Sun</span>.
-          <span className="text-3xl md:text-4xl text-yellow-400 font-extrabold">”</span>
+          <span className="text-2xl sm:text-3xl md:text-4xl text-yellow-400 font-extrabold">”</span>
         </p>
 
         {/* Main content area */}
-        <div className="h-full p-6">
+        <div className="h-full p-4 sm:p-6">
           {/* Home Section */}
           <section id="home" className="min-h-screen bg-transparent flex items-center justify-center">
             <HomeBanner />
