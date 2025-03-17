@@ -34,7 +34,7 @@ const projects = [
   {
     name: "Interns Tracking Portal",
     description: "Interns Tracking Portal streamlines intern management for industries and institutions with task allocation, team collaboration, leave tracking, and feedback management. Users get a personalized dashboard to monitor work, update tasks, and manage personal details efficiently.",
-    image: project2Img,
+    image: project1Img,
     gallery: [ems1, ems2, ems3, ems4, ems5, ems6, ems7, ems8],
     repoLink: "https://github.com/Padmavathi-SJ/Interns-Tracking-System",
     role: "Worked as FullStack Developer (React JS, Node JS, Express JS, MySQL)"
@@ -52,7 +52,7 @@ const projects = [
   {
     name: "Campus Chronicles",
     description: "College Events & Clubs Gallery is a digital space for students to upload and cherish their event memories. Users can share images, videos, and quotes, organizing them into personal folders to preserve unforgettable moments for the future.",
-    image: project1Img,
+    image: project2Img,
     gallery: [ncc1, ncc2, ncc3, ncc4, ncc5, ncc6],
     repoLink: "https://github.com/Padmavathi-SJ/NCC_Memoria",
     role: "Worked as FullStack Developer (React JS, Node JS, Express JS, MySQL)"
