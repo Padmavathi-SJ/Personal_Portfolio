@@ -53,7 +53,7 @@ const HomeBanner = () => {
           </p>
           <div>
             <a
-              href="https://github.com/Padmavathi-SJ"
+              href="https://github.com/Padmavathi-SJ/PadmavathiSJ"
               target="_blank"
               rel="noopener noreferrer"
               className=" text-white font-semibold px-5 py-2 rounded-lg shadow-lg border border-blue-500 transition-all duration-300"

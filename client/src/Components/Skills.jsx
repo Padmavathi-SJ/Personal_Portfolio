@@ -11,6 +11,8 @@ import sqlIcon from "../assets/sql-server.png";
 import mysqlIcon from "../assets/mysql.png";
 import gitIcon from "../assets/git.png";
 import githubIcon from "../assets/github.png";
+import dockerIcon from "../assets/docker.png";
+import awsIcon from "../assets/aws-cloud.png";
 
 
 const skillsData = [
@@ -26,6 +28,9 @@ const skillsData = [
   { name: "MySQL", icon: mysqlIcon, level: 85 },
   { name: "Git", icon: gitIcon, level: 95 },
   { name: "GitHub", icon: githubIcon, level: 90 },
+  { name: "Docker", icon: dockerIcon, level: 80 },
+  { name: "AWS", icon: awsIcon, level: 80 },
+
 
 ];
 
