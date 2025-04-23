@@ -5,6 +5,7 @@ import { FaTimes, FaChevronLeft, FaChevronRight, FaSearchPlus } from "react-icon
 import project1Img from "../assets/ems.jpg";
 import project2Img from "../assets/ncc.jpg";
 import project3Img from "../assets/compiler.jpg";
+import project4Img from "../assets/e-cart.jpg"
 
 import ncc1 from "../assets/ncc/ncc1.png";
 import ncc2 from "../assets/ncc/ncc2.png";
@@ -29,6 +30,12 @@ import compiler4 from '../assets/compiler/compiler4.png';
 import compiler5 from '../assets/compiler/compiler5.png';
 import compiler6 from '../assets/compiler/compiler6.png';
 import compiler7 from '../assets/compiler/compiler7.png';
+
+import ecart1 from '../assets/e-cart/ecart-1.png';
+import ecart2 from '../assets/e-cart/ecart-2.png';
+import ecart3 from '../assets/e-cart/ecart-3.png';
+import ecart4 from '../assets/e-cart/ecart-4.png';
+
 
 const projects = [
   {
@@ -56,6 +63,14 @@ const projects = [
     gallery: [ncc1, ncc2, ncc3, ncc4, ncc5, ncc6],
     repoLink: "https://github.com/Padmavathi-SJ/NCC_Memoria",
     role: "Worked as FullStack Developer (React JS, Node JS, Express JS, MySQL)"
+  },
+  {
+    name: "Smart E-Cart Application - Ongoing",
+    description: "Smart E-Cart Application empowers small sellers to effortlessly manage and sell their products online. With features like product listing, inventory control, customer orders, and wishlists, it streamlines the entire selling process. Sellers can track orders, update stock, and manage their store from a centralized dashboard, while customers enjoy a smooth and personalized shopping experience.",
+    image: project4Img,
+    gallery: [ecart1, ecart2, ecart3, ecart4],
+    repoLink: "https://github.com/Padmavathi-SJ/E-Cart-Application-",
+    role: "Working as FullStack Developer (React JS, Node JS, Express JS, MySQL)"
   },
 ];
 
