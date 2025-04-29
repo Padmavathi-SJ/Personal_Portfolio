@@ -3,129 +3,76 @@ import { motion } from "framer-motion";
 import contactImg from "../assets/contact2.jpg";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [loading, setLoading] = useState(false);
-  const [responseMessage, setResponseMessage] = useState("");
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setResponseMessage("");
-
-    try {
-      const response = await fetch("https://portfolio-backend-o78y.onrender.com/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-      setResponseMessage(result.message);
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      setResponseMessage("Failed to send message. Try again later.");
-    }
-
-    setLoading(false);
-  };
-
   return (
     <motion.div
-      className="flex flex-col justify-center items-center min-h-screen px-6 md:px-16 bg-transparent"
+      className="flex flex-col justify-center items-center min-h-screen px-4 sm:px-6 md:px-8 lg:px-16 bg-transparent py-16"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.8 }}
     >
-      {/* Title and Description */}
-      <div className="text-center mb-6">
-        <h2 className="text-3xl font-bold text-[var(--primary-text)] mb-2">
+      <div className="text-center mb-4 sm:mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-200 mb-1 sm:mb-2">
           Get in Touch
         </h2>
-        <p className="text-gray-400">
+        <p className="text-gray-400 text-sm sm:text-base">
           Feel free to reach out for collaborations, inquiries, or just to say hello!
         </p>
       </div>
 
-      {/* Outer Container */}
-      <div className="flex flex-col md:flex-row items-center border border-gray-300 rounded-xl p-6 md:p-8 w-full max-w-5xl bg-transparent shadow-lg">
-        {/* Left Section - Image */}
-        <div className="hidden md:flex flex-1 justify-center items-center">
+      <div className="flex flex-col md:flex-row items-center border border-gray-300 rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 w-full max-w-5xl bg-transparent shadow-md">
+        <div className="hidden md:flex flex-1 justify-center items-center mr-4 lg:mr-8">
           <img
             src={contactImg}
             alt="Contact"
-            className="w-[90%] rounded-xl shadow-lg"
+            className="w-full max-w-md rounded-lg shadow-lg"
           />
         </div>
 
-        {/* Right Section - Contact Form */}
-        <div className="flex-1 p-5 md:p-6 rounded-xl w-full md:w-[60%] bg-transparent">
-          <form className="space-y-3" onSubmit={handleSubmit}>
+        <div className="flex-1 p-3 sm:p-4 md:p-5 rounded-lg w-full">
+          <form className="space-y-2 sm:space-y-3 md:space-y-4">
             <div>
-              <label className="block text-[var(--primary-text)] font-semibold">
+              <label className="block text-gray-200 text-sm sm:text-base font-medium">
                 Your Name
               </label>
               <input
                 type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
+                className="text-blue-400 w-full p-2 text-sm sm:text-base rounded-md bg-transparent border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your name"
-                className="text-blue-400 w-full p-2 rounded-lg bg-transparent border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-[var(--primary-text)] font-semibold">
+              <label className="block text-gray-200 text-sm sm:text-base font-medium">
                 Your Email
               </label>
               <input
                 type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
+                className="text-blue-400 w-full p-2 text-sm sm:text-base rounded-md bg-transparent border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="example@example.com"
-                className="text-blue-400 w-full p-2 rounded-lg bg-transparent border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-[var(--primary-text)] font-semibold">
+              <label className="block text-gray-200 text-sm sm:text-base font-medium">
                 Your Message
               </label>
               <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
+                className="text-blue-400 w-full p-2 text-sm sm:text-base rounded-md bg-transparent border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Type your message..."
                 rows="3"
-                className="text-blue-400 w-full p-2 rounded-lg bg-transparent border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
                 required
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="w-full py-2 text-lg font-semibold text-[var(--primary-color)] border border-[var(--primary-color)] rounded-lg bg-transparent hover:bg-[var(--primary-color)] hover:text-white transition"
-              disabled={loading}
+              className="w-full py-2 text-sm sm:text-base md:text-lg font-medium text-white border border-blue-500 rounded-md bg-blue-500 hover:bg-blue-600 transition"
             >
-              {loading ? "Sending..." : "Send Message"}
+              Send Message
             </button>
           </form>
-
-          {/* Display Response Message */}
-          {responseMessage && (
-            <p className="mt-4 text-center text-gray-300">{responseMessage}</p>
-          )}
         </div>
       </div>
     </motion.div>

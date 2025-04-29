@@ -6,27 +6,27 @@ const Loader = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
   if (!loading) return null;
 
   const textVariants = {
-    hidden: { opacity: 0, x: -20 },
+    hidden: { opacity: 0, x: -10 },
     visible: (i) => ({
       opacity: 1,
       x: 0,
-      transition: { delay: i * 0.1 },
+      transition: { delay: i * 0.05 },
     }),
   };
 
   const iconVariants = {
-    hidden: { y: -100, opacity: 0 },
+    hidden: { y: -50, opacity: 0 },
     visible: { 
       y: 0,
       opacity: 1,
-      transition: { duration: 2, ease: "easeOut" },
+      transition: { duration: 1, ease: "easeOut" },
     },
   };
 
@@ -40,11 +40,18 @@ const Loader = () => {
         className="flex flex-col items-center"
       >
         <motion.div variants={iconVariants}>
-          <Code size={100} className="text-blue-500 mb-4" />
+          <Code size={60} className="text-blue-500 mb-2 sm:mb-4 sm:size-80 md:size-100" />
         </motion.div>
-        <div className="text-3xl font-mono text-blue-400">
+        <div className="text-xl sm:text-2xl md:text-3xl font-mono text-blue-400">
           {text.map((char, i) => (
-            <motion.span key={i} variants={textVariants} initial="hidden" animate="visible" custom={i}>
+            <motion.span 
+              key={i} 
+              variants={textVariants} 
+              initial="hidden" 
+              animate="visible" 
+              custom={i}
+              className="inline-block"
+            >
               {char}
             </motion.span>
           ))}

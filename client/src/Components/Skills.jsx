@@ -36,44 +36,35 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <div className="py-16 px-6 md:px-16 bg-transparent">
-      {/* Title & Subtitle */}
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-gray-200">Technical Skills</h2>
+    <div className="py-8 md:py-16 px-4 sm:px-6 md:px-8 lg:px-16 bg-transparent">
+      <div className="text-center mb-6 md:mb-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-200">Technical Skills</h2>
       </div>
 
-      {/* Skills Grid */}
       <motion.div
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
-        initial={{ opacity: 0, y: 50 }}
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6"
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
         {skillsData.map((skill, index) => (
           <motion.div
             key={index}
-            className="border border-[#99c2ff] rounded-lg bg-[rgba(255,255,255,0.05)] backdrop-blur-lg 
-              shadow-md p-4 flex items-center space-x-4 transition-all transform 
-              hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/50"
+            className="relative flex items-center border border-[#99c2ff] rounded-lg p-2 sm:p-3 md:p-4
+              bg-[rgba(255,255,255,0.05)] backdrop-blur-lg shadow-sm md:shadow-md transition-all 
+              transform hover:-translate-y-1 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-500/50"
             whileHover={{ scale: 1.02 }}
           >
-            {/* Skill Icon */}
-            <img src={skill.icon} alt={skill.name} className="w-12 h-12" />
-            
-            {/* Skill Details */}
-            <div className="flex-1">
-              <h3 className="text-lg font-semibold text-gray-100">{skill.name}</h3>
-              
-              {/* Progress Bar */}
-              <div className="w-full bg-gray-300 rounded-full h-2 mt-2">
+            <img src={skill.icon} alt={skill.name} className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-cover rounded-md shadow-sm mr-2 sm:mr-3 md:mr-4" />
+            <div className="flex-1 min-w-0">
+              <h3 className="text-xs sm:text-sm md:text-base font-medium text-gray-100 truncate">{skill.name}</h3>
+              <div className="w-full bg-gray-300 rounded-full h-1 sm:h-1.5 md:h-2 mt-1 sm:mt-2">
                 <div
-                  className="bg-[#99c2ff] h-2 rounded-full"
+                  className="bg-[#99c2ff] h-full rounded-full"
                   style={{ width: `${skill.level}%` }}
                 ></div>
               </div>
-              
-              {/* Percentage Level */}
-              <span className="text-sm text-gray-400">{skill.level}%</span>
+              <span className="text-xs text-gray-400">{skill.level}%</span>
             </div>
           </motion.div>
         ))}
@@ -81,5 +72,4 @@ const Skills = () => {
     </div>
   );
 };
-
 export default Skills;

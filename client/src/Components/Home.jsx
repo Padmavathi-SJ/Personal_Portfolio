@@ -12,65 +12,50 @@ import "./global.css";
 const Home = () => {
   return (
     <div className="relative flex flex-col md:flex-row">
-      {/* Sidebar - Fixed */}
       <Sidebar />
 
       <div className="flex flex-col w-full md:ml-16">
-        {/* TopBar */}
         <TopBar />
 
-        {/* Quote - Single Line Below TopBar */}
-        <p className="text-center text-base sm:text-lg md:text-xl font-semibold text-[var(--accent-color)] mt-4 px-4">
-          <span className="text-2xl sm:text-3xl md:text-4xl text-yellow-400 font-extrabold">“</span>
-          If you <span className="text-yellow-400 font-extrabold">shine</span> like a 
-          <span className="text-orange-500 font-extrabold"> Sun</span>, first 
-          <span className="text-red-500 font-extrabold"> burn</span> like a 
-          <span className="text-orange-500 font-extrabold"> Sun</span>.
-          <span className="text-2xl sm:text-3xl md:text-4xl text-yellow-400 font-extrabold">”</span>
+        {/* Responsive quote */}
+        <p className="text-center text-sm sm:text-base md:text-lg font-semibold text-[var(--accent-color)] mt-2 sm:mt-4 px-2 sm:px-4">
+          <span className="text-xl sm:text-2xl md:text-3xl text-yellow-400 font-extrabold">"</span>
+          If you <span className="text-yellow-400 font-bold">shine</span> like a 
+          <span className="text-orange-500 font-bold"> Sun</span>, first 
+          <span className="text-red-500 font-bold"> burn</span> like a 
+          <span className="text-orange-500 font-bold"> Sun</span>.
+          <span className="text-xl sm:text-2xl md:text-3xl text-yellow-400 font-extrabold">"</span>
         </p>
 
-        {/* Main content area */}
-        <div className="h-full p-4 sm:p-6">
-          {/* Home Section */}
-          <section id="home" className="min-h-screen bg-transparent flex items-center justify-center">
+        {/* Main content with responsive padding */}
+        <div className="h-full p-2 sm:p-4 md:p-6">
+          <section id="home" className="min-h-[90vh] sm:min-h-screen bg-transparent flex items-center justify-center">
             <HomeBanner />
           </section>
 
-          <hr className="border-[var(--accent-color)] opacity-50 w-full" />
+          <hr className="border-[var(--accent-color)] opacity-30 my-2 sm:my-4 w-full" />
 
-          {/* About Section */}
-          <section id="about" className="min-h-screen bg-transparent flex items-center justify-center">
+          <section id="about" className="min-h-[90vh] sm:min-h-screen bg-transparent flex items-center justify-center py-4">
             <Profile />
           </section>
 
-          <hr className="border-[var(--accent-color)] opacity-50 w-full" />
+          <hr className="border-[var(--accent-color)] opacity-30 my-2 sm:my-4 w-full" />
 
-          <section id="skills" className="min-h-screen bg-transparent">
+          <section id="skills" className="min-h-[90vh] sm:min-h-screen bg-transparent py-4">
             <Skills />
           </section>
 
-          <hr className="border-[var(--accent-color)] opacity-50 w-full" />
+          <hr className="border-[var(--accent-color)] opacity-30 my-2 sm:my-4 w-full" />
 
-          <section id="projects" className="min-h-screen bg-transparent">
+          <section id="projects" className="min-h-[90vh] sm:min-h-screen bg-transparent py-4">
             <Projects />
           </section>
 
-          <hr className="border-[var(--accent-color)] opacity-50 w-full" />
+          <hr className="border-[var(--accent-color)] opacity-30 my-2 sm:my-4 w-full" />
 
-          {/*
-
-          <section id="certifications" className="min-h-screen bg-transparent">
-            <Certifications />
-          </section>
-
-          <hr className="border-[var(--accent-color)] opacity-50 w-full" />
-          */}
-
-          <section id="contact" className="min-h-screen bg-transparent">
+          <section id="contact" className="min-h-[90vh] sm:min-h-screen bg-transparent py-4">
             <Contact />
           </section>
-
-          <hr className="border-[var(--accent-color)] opacity-50 w-full" />
         </div>
       </div>
     </div>
