@@ -13,6 +13,7 @@ import gitIcon from "../assets/git.png";
 import githubIcon from "../assets/github.png";
 import dockerIcon from "../assets/docker.png";
 import awsIcon from "../assets/aws-cloud.png";
+import "./global.css";
 
 
 const skillsData = [

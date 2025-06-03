@@ -8,6 +8,7 @@ import contactIcon from "../assets/contact-us.png";
 import profileImage from "../assets/padma-clg.png";
 import ProfilePanel from "./ProfilePanel";
 import profileIcon from "../assets/graduation.png";
+import "./global.css";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);

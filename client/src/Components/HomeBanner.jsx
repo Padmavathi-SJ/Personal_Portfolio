@@ -11,6 +11,7 @@ import mongoImage from "../assets/java-script.png";
 import tsImage from "../assets/git.png";
 import pythonImage from "../assets/mysql.png";
 import kubernetesImage from "../assets/html-5.png";
+import "./global.css";
 
 const HomeBanner = () => {
   return (
