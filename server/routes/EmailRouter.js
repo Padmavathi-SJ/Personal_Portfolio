@@ -1,9 +1,12 @@
 import express from "express";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+import cors from "cors";
 
 
 dotenv.config();
+app.use(express.json());
+app.use(cors());
 
 const router = express.Router();
 
